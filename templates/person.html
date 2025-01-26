@@ -1,0 +1,43 @@
+<!-- person_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foydalanuvchilar Ro'yxati</title>
+</head>
+<body>
+    <h1>Foydalanuvchilar Ro'yxati</h1>
+
+    <a href="/" style="display: inline-block; margin-bottom: 15px; padding: 10px 15px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">⬅️ Asosiy sahifaga qaytish</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Ism</th>
+                <th>Familiya</th>
+                <th>Komapniya</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Fan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+                <tr>
+                    <td>{{ person.first_name }}</td>
+                    <td>{{ person.last_name }}</td>
+                    <td>{{ person.company }}</td>
+                    <td>{{ person.email }}</td>
+                    <td>{{ person.phone }}</td>
+                    <td>{{ person.exist }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">Hozirda ro'yxatda foydalanuvchilar mavjud emas.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
